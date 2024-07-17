@@ -22,7 +22,6 @@ app.use("/jobs", jobRouter);
 // 3) GLOBAL ERROR HANDLER
 app.use((error, req, res, next) => {
   const { statusCode, status, message } = error;
-  console.log(error);
   res
     .status(statusCode || 500)
     .json({ status: status, message: message || "Internal Server Error" });
